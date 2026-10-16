@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10070b">
+<meta name="description" content="صفحه‌ای با تم جسورانه، لینک‌های ویدیوهای داغ و لینک دانلود فایل APK.">
+<title>AfterDark | دنیای ویدیوهای داغ</title>
+<style>
+:root{--bg:#10070b;--panel:#1b0d14;--red:#ff3158;--hot:#ff6b89;--muted:#cbb5bf;--line:#512033}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 82% 0%,#57112c 0,transparent 42%),radial-gradient(ellipse at 0% 100%,#2b0b1b 0,transparent 40%),var(--bg);color:#fff;font-family:Tahoma,Arial,sans-serif}
+a{color:inherit}
+header{max-width:1100px;margin:auto;padding:20px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid #ffffff15}
+.logo{font-weight:900;font-size:1.25rem;letter-spacing:.7px}.logo span{color:var(--red)}
+.age-pill{border:1px solid #7a2943;color:#ffc4d2;border-radius:999px;padding:7px 12px;font-size:.8rem}
+main{max-width:1100px;margin:auto;padding:28px 20px 56px}
+.hero{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:25px;padding:clamp(25px,5vw,55px);background:linear-gradient(125deg,#29101d,#160b11 58%,#3c0e21);box-shadow:0 25px 80px #0007}
+.hero:after{content:"18+";position:absolute;left:2%;top:1%;font-size:clamp(6rem,18vw,13rem);font-weight:900;color:#ffffff08;transform:rotate(-12deg);pointer-events:none}
+.kicker{color:#ff9eb4;font-size:.85rem}
+h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.4;margin:14px 0}
+h1 strong{color:var(--red);text-shadow:0 0 25px #ff315844}
+.lead{max-width:690px;color:var(--muted);line-height:2.1;font-size:1rem;margin:0}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:23px}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font:inherit;font-weight:800;border-radius:12px;padding:14px 20px;border:1px solid transparent;cursor:pointer}
+.primary{background:linear-gradient(120deg,#ff3158,#cf103e);color:#fff;box-shadow:0 8px 28px #ff31582c}
+.secondary{background:#ffffff08;color:#ffe5ec;border-color:#ffffff28}
+.btn:hover{filter:brightness(1.08)}
+.micro{font-size:.78rem;color:#a98d99;line-height:1.9;margin:15px 0 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:14px;margin:34px 0 16px}
+h2{font-size:1.35rem;margin:0}.section-head p{color:var(--muted);font-size:.88rem;line-height:1.8;margin:8px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{display:flex;flex-direction:column;align-items:flex-start;min-height:230px;padding:22px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,#25101a,#160b11);position:relative;overflow:hidden}
+.card:after{content:"";position:absolute;inset:auto -38px -68px auto;width:150px;height:150px;border-radius:50%;background:#ff315818;filter:blur(10px);pointer-events:none}
+.symbol{font-size:1.75rem;color:var(--red)}
+.card h3{font-size:1.08rem;margin:12px 0 8px}
+.card p{color:var(--muted);font-size:.88rem;line-height:2;margin:0 0 18px;flex:1}
+.card a{position:relative;z-index:1;color:#ffb7c8;font-weight:800;text-decoration:none;border-bottom:1px solid var(--red);padding-bottom:5px}
+.card a:hover{color:#fff}
+.download-card{border-color:#9d2445;background:linear-gradient(135deg,#3b1022,#1c0c14)}
+.chat-card{min-height:245px}
+.chat-text{color:#f5dbe4;background:#110910;border:1px solid #432031;border-radius:12px;padding:13px;line-height:2;font-size:.9rem;margin:8px 0 15px;width:100%}
+.chat-copy{font:inherit;font-weight:800;background:#35101f;color:#ffdce5;border:1px solid #783047;border-radius:10px;padding:10px 14px;cursor:pointer;position:relative;z-index:2}
+.chat-copy:hover{background:#51132b}
+.copy-status{font-size:.78rem;color:#ff9eb4;min-height:1.3em;margin-top:8px}
+
+.download-card .symbol{color:#ff91aa}
+.callout{border:1px solid #3c1a29;background:#180b11;border-radius:17px;padding:19px 21px;margin-top:22px}
+.callout h2{font-size:1rem;margin:0 0 8px}.callout p{color:var(--muted);line-height:2;font-size:.86rem;margin:0}
+footer{text-align:center;color:#967c88;font-size:.78rem;line-height:2;padding:24px 16px;border-top:1px solid #ffffff12}
+.overlay{position:fixed;inset:0;background:#080407ef;backdrop-filter:blur(12px);display:grid;place-items:center;padding:20px;z-index:10}
+.dialog{width:min(100%,430px);padding:29px 23px;text-align:center;border:1px solid #792541;border-radius:22px;background:linear-gradient(145deg,#29101d,#12080e);box-shadow:0 20px 80px #000a}
+.age-number{font-size:2.8rem;font-weight:900;color:var(--red);text-shadow:0 0 28px #ff315855}
+.dialog h2{font-size:1.3rem;margin:12px 0}.dialog p{color:var(--muted);line-height:2;font-size:.9rem}
+.hidden{display:none!important}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.card{min-height:unset}header{align-items:flex-start;flex-direction:column}.section-head{align-items:flex-start;flex-direction:column}.hero{padding:27px 21px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">AFTER<span>DARK</span></div>
+  <div class="age-pill">ویدیوهای داغ · ۱۸+</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="kicker">دنیای شبانه و ویدیوهای داغ</div>
+    <h1>دنبال ویدیوهای <strong>داغ و تحریک‌کننده</strong> می‌گردی؟</h1>
+    <p class="lead">دنبال کلیپ‌های داغ و فضای پرهیجان‌تری؟ دسته‌بندی‌های ویدیویی را در سایت اصلی بگرد یا لینک اپلیکیشن اندرویدی را ببین. انتخاب با توست؛ هر لینک خارجی تو را به وب‌سایت مربوط هدایت می‌کند.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://my.uploadkon.ir/d/2XC0kyOritPvNB2RhWWw8oO6fvrtAP/NTQ0MDJ8cGFkZA.apk" rel="noopener noreferrer">⬇ دانلود اپلیکیشن اندروید (APK)</a>
+      <a class="btn secondary" href="#porn-links">رفتن به لینک‌های پورن</a>
+    </div>
+    <p class="micro">دانلود APK از یک منبع خارجی انجام می‌شود. پیش از نصب، منبع فایل و مجوزهای درخواستی را بررسی کن؛ امنیت و عملکرد این فایل مستقلاً تأیید نشده است.</p>
+  </section>
+
+
+  <section id="chat-cases">
+    <div class="section-head">
+      <div>
+        <h2>کیس‌های ناب برای چت 😏</h2>
+        <p>چند شروع‌کنندهٔ آماده برای باز کردن سر صحبت؛ کپی کن، با لحن خودت تغییرش بده و محترمانه پیش برو.</p>
+      </div>
+      <span class="age-pill">کپی با یک کلیک</span>
+    </div>
+    <div class="grid">
+      <article class="card chat-card">
+        <div class="symbol">😏</div>
+        <h3>شروع شیطون</h3>
+        <div class="chat-text" id="chat1">یه سؤال مهم: همیشه این‌قدر جذابی یا امروز تصمیم گرفتی حواس همه رو پرت کنی؟ 😏</div>
+        <button class="chat-copy" type="button" data-copy="chat1">کپی متن</button>
+        <div class="copy-status" aria-live="polite"></div>
+      </article>
+      <article class="card chat-card">
+        <div class="symbol">🖤</div>
+        <h3>شروع مرموز</h3>
+        <div class="chat-text" id="chat2">حس می‌کنم پشت این پروفایل یه داستان جالب هست؛ از کجا شروع کنم که بیشتر باهات آشنا بشم؟ 😉</div>
+        <button class="chat-copy" type="button" data-copy="chat2">کپی متن</button>
+        <div class="copy-status" aria-live="polite"></div>
+      </article>
+      <article class="card chat-card">
+        <div class="symbol">🔥</div>
+        <h3>جذاب و رک</h3>
+        <div class="chat-text" id="chat3">راستش پروفایلت توجهم رو جلب کرد؛ گفتم به‌جای رد شدن، بیام سلام کنم. حالت چطوره؟</div>
+        <button class="chat-copy" type="button" data-copy="chat3">کپی متن</button>
+        <div class="copy-status" aria-live="polite"></div>
+      </article>
+      <article class="card chat-card">
+        <div class="symbol">😂</div>
+        <h3>خودمونی و بامزه</h3>
+        <div class="chat-text" id="chat4">بیا یه بازی: تو یه حقیقت جالب دربارهٔ خودت بگو، منم یکی می‌گم. شروع با تو 😄</div>
+        <button class="chat-copy" type="button" data-copy="chat4">کپی متن</button>
+        <div class="copy-status" aria-live="polite"></div>
+      </article>
+      <article class="card chat-card">
+        <div class="symbol">💬</div>
+        <h3>وقتی چت سرد شده</h3>
+        <div class="chat-text" id="chat5">حس می‌کنم هنوز کلی حرف نگفتنی داریم؛ یه موضوع بگو که بتونه این چت رو از حالت معمولی دربیاره 😉</div>
+        <button class="chat-copy" type="button" data-copy="chat5">کپی متن</button>
+        <div class="copy-status" aria-live="polite"></div>
+      </article>
+      <article class="card chat-card">
+        <div class="symbol">🌙</div>
+        <h3>گفت‌وگوی شبانه</h3>
+        <div class="chat-text" id="chat6">سؤال مخصوص امشب: اگه قرار بود همین الان یه گفت‌وگوی طولانی شروع کنی، دوست داشتی دربارهٔ چی حرف بزنیم؟</div>
+        <button class="chat-copy" type="button" data-copy="chat6">کپی متن</button>
+        <div class="copy-status" aria-live="polite"></div>
+      </article>
+    </div>
+    <p class="micro">نکته: پیام آماده تضمین‌کنندهٔ جواب نیست؛ به علاقه و مرزهای طرف مقابل احترام بذار و اگر تمایلی نداشت، اصرار نکن.</p>
+  </section>
+
+  <section id="porn-links">
+    <div class="section-head">
+      <div><h2>ورود به دنیای ویدیوهای داغ</h2><p>برای دیدن کلیپ‌ها و ویدیوهای تحریک‌کننده، کارت دلخواهت را انتخاب کن تا بخش مربوط در Pornhub باز شود.</p></div>
+      <span class="age-pill">۱۸+ فقط</span>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <div class="symbol">▶</div>
+        <h3>ویدیوهای داغ</h3>
+        <p>ویدیوهای سایت اصلی را مرور کن؛ دسترسی به محتوا ممکن است بسته به منطقه متفاوت باشد.</p>
+        <a href="https://www.pornhub.com/video" target="_blank" rel="noopener noreferrer">مشاهده ویدیوها ↗</a>
+      </article>
+      <article class="card">
+        <div class="symbol">▦</div>
+        <h3>دسته‌بندی‌های ویدیویی</h3>
+        <p>دسته‌بندی‌های مختلف ویدیو را در وب‌سایت اصلی بگرد و موضوع دلخواهت را انتخاب کن.</p>
+        <a href="https://www.pornhub.com/categories" target="_blank" rel="noopener noreferrer">مرور دسته‌بندی‌ها ↗</a>
+      </article>
+      <article class="card">
+        <div class="symbol">↗</div>
+        <h3>ورود به Pornhub</h3>
+        <p>اگر می‌خواهی مستقیماً وارد سایت شوی، از لینک زیر صفحهٔ اصلی را باز کن.</p>
+        <a href="https://www.pornhub.com/" target="_blank" rel="noopener noreferrer">رفتن به سایت اصلی ↗</a>
+      </article>
+      <article class="card download-card">
+        <div class="symbol">⬇</div>
+        <h3>دانلود اپلیکیشن اندروید</h3>
+        <p>لینک فایل APK ارائه‌شده را باز کن. قبل از نصب، از معتبر بودن فایل و مجوزهای آن مطمئن شو.</p>
+        <a href="https://my.uploadkon.ir/d/2XC0kyOritPvNB2RhWWw8oO6fvrtAP/NTQ0MDJ8cGFkZA.apk" rel="noopener noreferrer">دریافت فایل APK ↗</a>
+      </article>
+      <article class="card">
+        <div class="symbol">⌕</div>
+        <h3>جست‌وجو در سایت اصلی</h3>
+        <p>برای پیدا کردن موضوع موردنظرت از جست‌وجوی خود وب‌سایت استفاده کن.</p>
+        <a href="https://www.pornhub.com/" target="_blank" rel="noopener noreferrer">باز کردن سایت و جست‌وجو ↗</a>
+      </article>
+      <article class="card">
+        <div class="symbol">✦</div>
+        <h3>ویدیوهای داغ و پرهیجان</h3>
+        <p>این صفحه نقش راهنما دارد؛ ویدیوها در سایت اصلی باز می‌شوند، نه روی این صفحه.</p>
+        <a href="https://www.pornhub.com/" target="_blank" rel="noopener noreferrer">رفتن به Pornhub ↗</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="callout">
+    <h2>قبل از دانلود و ورود</h2>
+    <p>این صفحه برای بزرگسالان ۱۸ سال به بالا طراحی شده است. لینک‌های Pornhub به سایت خارجی می‌روند و لینک APK به میزبان فایل جداگانه هدایت می‌شود. این صفحه اطلاعات ورود، شماره تلفن یا شناسهٔ حساب کاربران را جمع‌آوری نمی‌کند.</p>
+  </section>
+</main>
+
+<footer>
+  AFTERDARK · ویدیوهای داغ برای افراد ۱۸ سال به بالا<br>
+  دسترسی به سایت‌های خارجی ممکن است با توجه به کشور و قوانین محلی متفاوت باشد.
+</footer>
+
+<div class="overlay" id="ageOverlay" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
+  <div class="dialog">
+    <div class="age-number">18+</div>
+    <h2 id="ageTitle">این صفحه مخصوص بزرگسالان است</h2>
+    <p>فقط در صورتی وارد شو که حداقل ۱۸ سال داری و مشاهدهٔ این محتوا در محل زندگی‌ات مجاز است.</p>
+    <div class="actions" style="justify-content:center">
+      <button class="btn primary" id="yesBtn" type="button">۱۸ سال یا بیشتر دارم — ورود</button>
+      <button class="btn secondary" id="noBtn" type="button">خروج</button>
+    </div>
+    <p class="micro">این پنجره تأیید خوداظهاری است و سن را به‌صورت مستقل احراز نمی‌کند.</p>
+  </div>
+</div>
+<script>
+
+document.querySelectorAll('[data-copy]').forEach((button) => {
+  button.addEventListener('click', async () => {
+    const source = document.getElementById(button.dataset.copy);
+    const status = button.parentElement.querySelector('.copy-status');
+    const text = source ? source.textContent.trim() : '';
+    try {
+      await navigator.clipboard.writeText(text);
+      status.textContent = 'کپی شد ✓';
+    } catch (error) {
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      const copied = document.execCommand('copy');
+      area.remove();
+      status.textContent = copied ? 'کپی شد ✓' : 'متن را انتخاب و کپی کن';
+    }
+    button.textContent = 'کپی دوباره';
+  });
+});
+
+const overlay = document.getElementById('ageOverlay');
+document.getElementById('yesBtn').addEventListener('click', () => overlay.classList.add('hidden'));
+document.getElementById('noBtn').addEventListener('click', () => {
+  document.body.innerHTML = '<main style="text-align:center;padding-top:20vh"><h1>ورود لغو شد</h1><p>این صفحه مخصوص افراد ۱۸ سال به بالا است.</p></main>';
+});
+</script>
+</body>
+</html>
